@@ -1,0 +1,40 @@
+{
+  "name": "spryker-sdk/autoload-cache",
+  "type": "composer-plugin",
+  "description": "Redis autoload cache composer plugin",
+  "keywords": [
+    "composer",
+    "autoload",
+    "development",
+    "cache"
+  ],
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.2",
+    "ext-redis": "*",
+    "composer-plugin-api": "^1.1"
+  },
+  "require-dev": {
+    "composer/composer": "^1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "SprykerSdk\\AutoloadCache\\": "src/SprykerSdk/AutoloadCache"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "bin": [
+    "bin/autoload-watch.sh"
+  ],
+  "extra": {
+    "class": "SprykerSdk\\AutoloadCache\\ComposerPlugin"
+  },
+  "scripts": {
+    "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/SprykerStrict/ruleset.xml src/ tests/",
+    "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/SprykerStrict/ruleset.xml src/ tests/"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
